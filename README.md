@@ -160,7 +160,8 @@
                 const subject = `Quote Request from ${name}`;
                 const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0ARooms: ${rooms}%0D%0AType: ${type}%0D%0ASquare Footage: ${squareFootage}%0D%0ADetails: ${details}`;
 
-                window.location.href = `mailto:ctdraftbeer@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                // Updated email address to Christian's email
+                window.location.href = `mailto:christiansinchi1@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             });
         });
 
@@ -242,9 +243,9 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
-        <p><strong>Austin Mizzell</strong></p>
-        <p>Phone: 860-906-6883</p>
-        <p>Email: ctdraftbeer@gmail.com</p>
+        <p><strong>Christian Sinchi</strong></p>
+        <p>Phone: 1 (347) 702-2499</p>
+        <p>Email: christiansinchi1@hotmail.com</p>
     </section>
 
     <!-- Footer -->
