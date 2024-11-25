@@ -8,7 +8,16 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
+            background: #000;
+            background-image: radial-gradient(circle, #fff 1px, transparent 1px),
+                              radial-gradient(circle, #18bc9c 1px, transparent 1px),
+                              radial-gradient(circle, #3498db 1px, transparent 1px),
+                              radial-gradient(circle, #f39c12 1px, transparent 1px),
+                              radial-gradient(circle, #e74c3c 1px, transparent 1px);
+            background-size: 80px 80px;
+            background-position: 0 0, 40px 40px, 20px 60px, 60px 20px, 30px 70px;
+            color: white;
+            overflow-x: hidden;
         }
 
         header {
@@ -67,37 +76,15 @@
         section {
             padding: 60px 20px;
             text-align: center;
-        }
-
-        .about {
-            background-color: #ffffff;
-            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
-            padding: 40px;
-            max-width: 900px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .about h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .about p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        .services, .quote {
-            background-color: #f4f4f4;
             margin: 20px auto;
-            border-radius: 10px;
-            padding: 40px;
             max-width: 900px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            color: #333;
         }
 
-        .service-cards {
+        .services .service-cards {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
@@ -134,12 +121,23 @@
             gap: 20px;
         }
 
-        .quote input, .quote select, .quote textarea {
+        .quote input,
+        .quote select,
+        .quote textarea {
             padding: 10px;
-            width: 80%;
+            width: 100%;
             max-width: 400px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .quote select {
+            height: 40px;
+        }
+
+        .quote textarea {
+            height: 80px;
         }
 
         .quote button {
@@ -165,41 +163,6 @@
             font-size: 0.9rem;
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('quoteForm').addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const phone = document.getElementById('phone').value;
-                const rooms = document.getElementById('rooms').value;
-                const type = document.getElementById('type').value;
-                const squareFootage = document.getElementById('squareFootage').value;
-                const details = document.getElementById('details').value;
-
-                const subject = `Quote Request from ${name}`;
-                const body = `
-                Quote Request from Elite Floor Finishers:
-                ---------------------------------------
-                Name: ${name}
-                Email: ${email}
-                Phone: ${phone}
-                Rooms: ${rooms}
-                Type: ${type}
-                Square Footage: ${squareFootage}
-                Additional Details: ${details}
-                ---------------------------------------
-                `;
-
-                window.location.href = `mailto:christiansinchi1@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            });
-        });
-
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
 </head>
 <body>
     <!-- Header -->
@@ -224,14 +187,14 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about">
         <h2>About Us</h2>
         <p>Christian Sinchi co-founded Elite Floor Finishers with a mission to provide exceptional flooring solutions. After years of searching for a business that showcased his talent for selling, he discovered flooring services—a job that sells itself. Customers who want beautiful, durable floors know they can trust us to deliver the best results at the best prices.</p>
         <p>As a family-owned and operated business, we stand by our work for a lifetime, ensuring you receive the best quality and service. Whether it’s your garage, basement, or custom space, we’ve got you covered with our trusted expertise.</p>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="services">
         <h2>Our Services</h2>
         <div class="service-cards">
             <div class="card">
@@ -256,19 +219,19 @@
             <input type="text" id="name" name="name" placeholder="Your Name" required>
             <input type="email" id="email" name="email" placeholder="Your Email" required>
             <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
-            <select id="rooms" name="rooms">
+            <select id="rooms" name="rooms" required>
                 <option value="" disabled selected>Number of rooms?</option>
                 <option value="one">One</option>
                 <option value="two">Two</option>
                 <option value="three">Three or more</option>
             </select>
-            <select id="type" name="type">
+            <select id="type" name="type" required>
                 <option value="" disabled selected>Garage or basement?</option>
                 <option value="garage">Garage</option>
                 <option value="basement">Basement</option>
                 <option value="both">Both</option>
             </select>
-            <select id="squareFootage" name="squareFootage">
+            <select id="squareFootage" name="squareFootage" required>
                 <option value="" disabled selected>Square footage?</option>
                 <option value="less100">Less than 100 sq. ft.</option>
                 <option value="100to500">100–500 sq. ft.</option>
@@ -280,7 +243,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact">
         <h2>Contact Us</h2>
         <p><strong>Christian Sinchi</strong></p>
         <p>Phone: 1 (347) 702-2499</p>
@@ -291,5 +254,37 @@
     <footer>
         <p>© 2024 Elite Floor Finishers. All Rights Reserved.</p>
     </footer>
+
+    <!-- Script -->
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('quoteForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const rooms = document.getElementById('rooms').value;
+                const type = document.getElementById('type').value;
+                const squareFootage = document.getElementById('squareFootage').value;
+                const details = document.getElementById('details').value;
+
+                const subject = `Quote Request from ${name}`;
+                const body = `
+                Name: ${name}\n
+                Email: ${email}\n
+                Phone: ${phone}\n
+                Rooms: ${rooms}\n
+                Type: ${type}\n
+                Square Footage: ${squareFootage}\n
+                Details: ${details}\n
+                `;
+                window.location.href = `mailto:christiansinchi1@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            });
+        });
+    </script>
 </body>
 </html>
