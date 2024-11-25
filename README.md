@@ -26,14 +26,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
+            padding: 15px 20px;
         }
 
         header nav a {
             color: white;
-            margin-left: 20px;
+            margin-left: 15px;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: color 0.3s ease;
         }
 
@@ -45,26 +45,26 @@
             text-align: center;
             background: linear-gradient(to right, #2c3e50, #18bc9c);
             color: white;
-            padding: 100px 20px;
+            padding: 80px 20px;
         }
 
         .hero h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+            font-size: 1rem;
+            margin-bottom: 20px;
         }
 
         .hero button {
             background-color: #18bc9c;
             color: white;
             border: none;
-            padding: 15px 40px;
+            padding: 10px 30px;
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1rem;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
@@ -74,28 +74,29 @@
         }
 
         section {
-            padding: 60px 20px;
+            padding: 40px 15px;
             text-align: center;
             background: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
-            margin: 20px auto;
-            max-width: 900px;
+            margin: 15px auto;
+            max-width: 90%;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
             color: #333;
         }
 
         .services .service-cards {
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 20px;
+            align-items: center;
         }
 
         .card {
             background-color: white;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 250px;
+            padding: 15px;
+            width: 100%;
+            max-width: 300px;
             border-radius: 10px;
             transition: transform 0.3s ease;
         }
@@ -105,12 +106,12 @@
         }
 
         .card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
         }
 
         .card p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #666;
         }
 
@@ -118,35 +119,35 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         .quote input,
         .quote select,
         .quote textarea {
-            padding: 10px;
+            padding: 8px;
             width: 100%;
-            max-width: 400px;
+            max-width: 300px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         .quote select {
-            height: 40px;
+            height: 35px;
         }
 
         .quote textarea {
-            height: 80px;
+            height: 60px;
         }
 
         .quote button {
             background-color: #18bc9c;
             color: white;
             border: none;
-            padding: 15px 40px;
+            padding: 10px 30px;
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1rem;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
@@ -159,8 +160,44 @@
             background-color: #2c3e50;
             color: white;
             text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
+            padding: 15px;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header nav a {
+                font-size: 0.9rem;
+                margin-left: 10px;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .hero button {
+                font-size: 0.9rem;
+                padding: 10px 25px;
+            }
+
+            .card {
+                max-width: 90%;
+            }
+
+            .quote input,
+            .quote select,
+            .quote textarea {
+                font-size: 0.85rem;
+                padding: 8px;
+            }
+
+            footer {
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
