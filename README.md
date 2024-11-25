@@ -8,6 +8,7 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
         }
 
         header {
@@ -39,7 +40,7 @@
         }
 
         .hero h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 10px;
         }
 
@@ -66,6 +67,26 @@
         section {
             padding: 60px 20px;
             text-align: center;
+        }
+
+        .about {
+            background-color: #ffffff;
+            margin: 20px auto;
+            border-radius: 10px;
+            padding: 40px;
+            max-width: 900px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
         }
 
         .services, .quote {
@@ -158,9 +179,19 @@
                 const details = document.getElementById('details').value;
 
                 const subject = `Quote Request from ${name}`;
-                const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0ARooms: ${rooms}%0D%0AType: ${type}%0D%0ASquare Footage: ${squareFootage}%0D%0ADetails: ${details}`;
+                const body = `
+                Quote Request from Elite Floor Finishers:
+                ---------------------------------------
+                Name: ${name}
+                Email: ${email}
+                Phone: ${phone}
+                Rooms: ${rooms}
+                Type: ${type}
+                Square Footage: ${squareFootage}
+                Additional Details: ${details}
+                ---------------------------------------
+                `;
 
-                // Updated email address to Christian's email
                 window.location.href = `mailto:christiansinchi1@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             });
         });
@@ -178,6 +209,7 @@
         </div>
         <nav>
             <a href="#home">Home</a>
+            <a href="#about">About Us</a>
             <a href="#services">Services</a>
             <a href="#free-quote">Free Quote</a>
             <a href="#contact">Contact</a>
@@ -186,9 +218,16 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <h2>Strong Floors, Stylish Spaces</h2>
-        <p>Premium garage & basement floor coatings.</p>
+        <h2>Transforming Floors, Transforming Spaces</h2>
+        <p>Premium garage & basement floor coatings for Hartford County.</p>
         <button onclick="scrollToSection('free-quote')">Get a Free Quote</button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>Christian Sinchi co-founded Elite Floor Finishers with a mission to provide exceptional flooring solutions. After years of searching for a business that showcased his talent for selling, he discovered flooring services—a job that sells itself. Customers who want beautiful, durable floors know they can trust us to deliver the best results at the best prices.</p>
+        <p>As a family-owned and operated business, we stand by our work for a lifetime, ensuring you receive the best quality and service. Whether it’s your garage, basement, or custom space, we’ve got you covered with our trusted expertise.</p>
     </section>
 
     <!-- Services Section -->
